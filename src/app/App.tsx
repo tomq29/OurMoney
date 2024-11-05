@@ -1,12 +1,12 @@
 import './styles/index.scss';
 import { Link, Route, Routes } from 'react-router-dom';
-import { lazy, Suspense, useContext, useState } from 'react';
-import { useTheme } from './theme/useTheme';
-import classNames from './helpers/classNames/classNames';
+import { lazy, Suspense } from 'react';
+import classNames from 'shared/lib/classNames/classNames';
+import { useTheme } from 'app/providers/ThemeProvider';
+import { MainPage } from 'pages/MainPage';
+import { AboutPage } from 'pages/AboutPage';
 
-const MainPage = lazy(() => import('./pages/MainPage/MainPage'));
-const Counter = lazy(() => import('./components/Counter'));
-const AboutPage = lazy(() => import('./pages/AboutPage/AboutPage'));
+
 
 export default function App() {
   const { theme, toogleTheme } = useTheme();
@@ -20,7 +20,6 @@ export default function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/counter" element={<Counter />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
       </Suspense>

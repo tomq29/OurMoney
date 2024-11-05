@@ -7,6 +7,7 @@ export interface BuildPath {
   entry: string;
   output: string;
   htlm: string;
+  src: string
 }
 
 export interface BuildEnv {

@@ -7,7 +7,8 @@ export default function buildPlugins({
   paths,
   isDev,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-  return [
+  
+  const plugins = [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({ template: paths.htlm }),
     new MiniCssExtractPlugin({
@@ -18,4 +19,10 @@ export default function buildPlugins({
       __IS_DEV__: JSON.stringify(isDev),
     }),
   ];
+
+  if (isDev) {
+    new webpack.HotModuleReplacementPlugin();
+  }
+
+  return plugins;
 }

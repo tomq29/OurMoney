@@ -6,11 +6,6 @@ import classNames from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/NavBar';
 import { SideBar } from 'widgets/SideBar';
 
-
-
-
-
-
 export default function App() {
   const { theme } = useTheme();
 

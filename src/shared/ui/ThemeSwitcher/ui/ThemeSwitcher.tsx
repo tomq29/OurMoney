@@ -1,6 +1,5 @@
 import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import classNames from 'shared/lib/classNames/classNames';
-import cls from './ThemeSwitcher.module.scss';
 import SunIcon from 'shared/assets/icons/light-mode.svg';
 import MoonIcon from 'shared/assets/icons/dark-mode.svg';
 import { Button, ButtonVariants } from 'shared/ui/Button/Button';
@@ -15,7 +14,7 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
     <Button
       variant={ButtonVariants.clear}
       onClick={toogleTheme}
-      className={classNames(cls.ThemeSwitcher, {}, [className])}
+      className={classNames('', {}, [className])}
     >
       {theme === Theme.LIGHT ? <MoonIcon /> : <SunIcon />}
     </Button>

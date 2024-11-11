@@ -22,6 +22,10 @@ export default [
     },
   },
   {
+    files: ['**/src/**/*.test.{ts,tsx}'],
+    rules: { 'i18next/no-literal-string': 'off' },
+  },
+  {
     ignores: ['node_modules/*', 'dist/*', 'build/*', 'public/*'],
   },
   {
@@ -31,4 +35,12 @@ export default [
       },
     },
   },
+  // {
+  //   overrides: [
+  //     {
+  //       files: ['**/src/**/*.test.{ts,tsx}'],
+  //       rules: { 'i18next/no-literal-string': 'off' },
+  //     },
+  //   ],
+  // },
 ];
